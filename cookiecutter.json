@@ -1,4 +1,5 @@
 {
+    "template": ["Vanilla (./vanilla)"],
     "project_name": "Python Project",
     "description": "",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
