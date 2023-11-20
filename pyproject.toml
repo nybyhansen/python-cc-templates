@@ -1,16 +1,15 @@
 [tool.poetry]
-name = "{{ cookiecutter.__package_name_kebab_case }}"
+name = "python-cc-templates"
 version = "0.1.0"
-description = ""{{ cookiecutter.__package_name_kebab_case }}"
-authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"]
+description = "Cookiecutter templates for python"
+authors = ["Dennis Hansen <nybyhansen1990@gmail.com>"]
 readme = "README.md"
-packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 cookiecutter = "^2.4.0"
 
-[tool.poetry.dev.dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
 
 [build-system]
