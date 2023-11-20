@@ -1,3 +1,8 @@
 {
-    "secret": "hidden"
+    "repo_name": "Python Project",
+    "description": "",
+    "author_name": "",
+    "author_email": "",
+    "__project_name_snake_case": "{{ cookiecutter.repo_name|slugify(separator='_') }}",
+    "__package_name_kebab_case": "{{ cookiecutter.repo_name|slugify }}"
 }
