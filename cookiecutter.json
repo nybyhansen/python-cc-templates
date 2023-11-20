@@ -1,4 +1,5 @@
 {
+    "template": ["Vanilla (./vanilla)"],
     "repo_name": "Python Project",
     "description": "",
     "author_name": "",
