@@ -1,8 +1,8 @@
 {
-    "repo_name": "Python Project",
-    "description": "",
-    "author_name": "",
-    "author_email": "",
-    "__repo_name_snake_case": "{{ cookiecutter.repo_name|slugify(separator='_') }}",
-    "__repo_name_kebab_case": "{{ cookiecutter.repo_name|slugify }}"
+  "repo_name": "Python Project",
+  "description": "",
+  "author_name": "",
+  "author_email": "",
+  "__repo_name_snake_case": "{{ cookiecutter.repo_name|slugify(separator='_') }}",
+  "__repo_name_kebab_case": "{{ cookiecutter.repo_name|slugify }}"
 }
