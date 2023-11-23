@@ -31,7 +31,7 @@ jobs:
         run: poetry install --no-interaction --no-root
 
       - name: Test with pytest
-        run: poetry run pytest
+        run: poetry run pytest tests
 
       - name: Pre-commit checks
         run: poetry run pre-commit run --all-files
