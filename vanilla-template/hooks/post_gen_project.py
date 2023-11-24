@@ -18,10 +18,8 @@ def clone_remote_repo() -> bool:
     if not remote_repo_url:
         return False
     try:
-        Repo.clone_from(
-            url=remote_repo_url,
-            to_path="./",
-        )
+        os.system("git init")
+        os.system(f"git remote add origin {remote_repo_url}")
         return True
 
     except Exception:
