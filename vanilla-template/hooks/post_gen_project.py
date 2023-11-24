@@ -1,8 +1,6 @@
 import os
 import sys
 
-from git import Repo
-
 
 def install_poetry() -> bool:
     try:
@@ -15,11 +13,11 @@ def install_poetry() -> bool:
 
 def clone_remote_repo() -> bool:
     remote_repo_url = "{{ cookiecutter.remote_repo_url }}"
-    if not remote_repo_url:
-        return False
+
     try:
         os.system("git init")
-        os.system(f"git remote add origin {remote_repo_url}")
+        if remote_repo_url:
+            os.system(f"git remote add origin {remote_repo_url}")
         return True
 
     except Exception:
