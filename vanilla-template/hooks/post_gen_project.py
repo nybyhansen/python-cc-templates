@@ -20,7 +20,7 @@ def clone_remote_repo() -> bool:
     try:
         Repo.clone_from(
             url=remote_repo_url,
-            to_path="../",
+            to_path="./{{ cookiecutter.repo_name}}",
         )
         return True
 
@@ -37,9 +37,9 @@ def connect_pre_commit_to_git() -> bool:
 
 
 if __name__ == "__main__":
-    install_poetry_response = install_poetry()
-    if not install_poetry_response:
-        sys.exit(1)
+    # install_poetry_response = install_poetry()
+    # if not install_poetry_response:
+    #    sys.exit(1)
 
     clone_repo_response = clone_remote_repo()
     if not clone_repo_response:
