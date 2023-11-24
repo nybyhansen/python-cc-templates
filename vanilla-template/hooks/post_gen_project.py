@@ -45,6 +45,6 @@ if __name__ == "__main__":
     if not clone_repo_response:
         sys.exit(1)
 
-    connect_pre_commit_to_git_response = connect_pre_commit_to_git()
-    if not connect_pre_commit_to_git_response:
-        sys.exit(1)
+    # connect_pre_commit_to_git_response = connect_pre_commit_to_git()
+    # if not connect_pre_commit_to_git_response:
+    #    sys.exit(1)
