@@ -38,12 +38,13 @@ def connect_pre_commit_to_git() -> bool:
 
 if __name__ == "__main__":
     install_poetry_response = install_poetry()
-    clone_repo_response = clone_remote_repo()
-    connect_pre_commit_to_git_response = connect_pre_commit_to_git()
+    if not install_poetry_response:
+        sys.exit(1)
 
-    if (
-        not install_poetry_response
-        and connect_pre_commit_to_git_response
-        and install_poetry_response
-    ):
+    clone_repo_response = clone_remote_repo()
+    if not clone_repo_response:
+        sys.exit(1)
+
+    connect_pre_commit_to_git_response = connect_pre_commit_to_git()
+    if not connect_pre_commit_to_git_response:
         sys.exit(1)
