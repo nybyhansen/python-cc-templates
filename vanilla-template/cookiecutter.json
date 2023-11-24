@@ -1,6 +1,7 @@
 {
   "repo_name": "Python Project",
   "description": "",
+  "remote_repo_url": "",
   "author_name": "",
   "author_email": "",
   "__repo_name_snake_case": "{{ cookiecutter.repo_name|slugify(separator='_') }}",
