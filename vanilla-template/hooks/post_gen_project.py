@@ -20,7 +20,7 @@ def clone_remote_repo() -> bool:
     try:
         Repo.clone_from(
             url=remote_repo_url,
-            to_path="./{{ cookiecutter.repo_name}}",
+            to_path="./",
         )
         return True
 
