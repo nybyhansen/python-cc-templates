@@ -1,0 +1,16 @@
+name: Update precommit
+
+on: [workflow_dispatch]
+
+jobs:
+  autoupdate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: action/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: autoupdate precommit
+        run: |
+          pip install pre-commit \
+          pre-commit autoupdate
