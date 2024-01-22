@@ -10,9 +10,11 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-      - name: autoupdate precommit
+
+      - name: update pre-commit hooks
         run: |
           pip install pre-commit \
           pre-commit autoupdate
+
       - name: create pull-request
         uses: peter-evans/create-pull-request@v5

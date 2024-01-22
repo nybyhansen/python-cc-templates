@@ -4,3 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+
+  - package-ecosystem: "pip"
+    directory: "/vanilla-template/{{ cookiecutter.repo_name }}"
+    schedule:
+      interval: "monthly"
