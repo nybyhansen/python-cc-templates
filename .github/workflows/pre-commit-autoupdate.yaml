@@ -18,3 +18,5 @@ jobs:
 
       - name: create pull-request
         uses: peter-evans/create-pull-request@v5
+        with:
+          title: "Auto-update pre-commit hooks"
