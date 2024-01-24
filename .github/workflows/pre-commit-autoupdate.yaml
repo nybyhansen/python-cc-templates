@@ -14,7 +14,7 @@ jobs:
       - name: update pre-commit hooks
         run: |
           pip install pre-commit
-          pre-commit autoupdate
+          pre-commit autoupdate -c "vanilla-template/{{ cookiecutter.repo_name }}/.pre-commit-config.yaml"
 
       - name: create pull-request
         uses: peter-evans/create-pull-request@v5
