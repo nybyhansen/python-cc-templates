@@ -13,7 +13,7 @@ jobs:
 
       - name: update pre-commit hooks
         run: |
-          pip install pre-commit &
+          pip install pre-commit
           pre-commit autoupdate
 
       - name: create pull-request
