@@ -1,9 +1,8 @@
 name: Update precommit
-
 on: [workflow_dispatch]
 
 jobs:
-  autoupdate:
+  autoUpdate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,4 +18,9 @@ jobs:
       - name: create pull-request
         uses: peter-evans/create-pull-request@v5
         with:
-          title: "Auto-update pre-commit hooks"
+          commit-message: update pre-commit hooks
+          title: "New versions to pre-commit hooks"
+          branch: pre-commit-autoupdates
+          delete-branch: true
+          reviewers: nybyhansen
+          labels: dependencies
