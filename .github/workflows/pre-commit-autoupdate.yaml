@@ -47,5 +47,6 @@ jobs:
             This PR is auto-generated.
           branch: pre-commit-autoupdates-${{ steps.name.outputs.branch-suffix }}
           delete-branch: true
+          comitter: nybyhansen
           reviewers: nybyhansen
           labels: dependencies
