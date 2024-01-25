@@ -20,7 +20,7 @@ jobs:
 
       - id: name
         run: |
-          if [[ "${{ matrix.config-path }}" == ".pre-commit-config.yaml"]]
+          if [ "${{ matrix.config-path }}" == ".pre-commit-config.yaml" ]
           then
             NAME="outer-project"
           else
