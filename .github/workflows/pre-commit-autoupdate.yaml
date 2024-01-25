@@ -20,7 +20,7 @@ jobs:
       - name: update pre-commit hooks
         run: |
           pip install pre-commit
-          pre-commit autoupdate -c ${{ matrix.config-path }}
+          pre-commit autoupdate -c "${{ matrix.config-path }}"
 
       - name: create pull-request
         uses: peter-evans/create-pull-request@v5
