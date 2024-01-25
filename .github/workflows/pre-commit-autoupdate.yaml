@@ -18,6 +18,16 @@ jobs:
         with:
           python-version: "3.11"
 
+      - id: name
+        run: |
+          if [[ "${{ matrix.config-path }}" == ".pre-commit-config.yaml"]]
+          then
+            NAME="outer-project"
+          else
+            NAME="template"
+          fi
+          echo "branch-suffix=$NAME" >> "$GITHUB_OUTPUT"
+
       - name: update pre-commit hooks
         run: |
           pip install pre-commit
@@ -28,7 +38,7 @@ jobs:
         with:
           commit-message: update pre-commit hooks
           title: "New versions to pre-commit hooks"
-          branch: pre-commit-autoupdates
+          branch: pre-commit-autoupdates-${{ steps.name.outputs.branch-suffix }}
           delete-branch: true
           reviewers: nybyhansen
           labels: dependencies
