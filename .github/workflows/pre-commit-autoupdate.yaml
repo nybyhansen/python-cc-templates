@@ -3,6 +3,13 @@ on: [workflow_dispatch]
 
 jobs:
   autoUpdate:
+    strategy:
+      matrix:
+        config-path:
+          [
+            "vanilla-template/{{ cookiecutter.repo_name }}/.pre-commit-config.yaml",
+            ".pre-commit-config.yaml",
+          ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,7 +20,7 @@ jobs:
       - name: update pre-commit hooks
         run: |
           pip install pre-commit
-          pre-commit autoupdate -c "vanilla-template/{{ cookiecutter.repo_name }}/.pre-commit-config.yaml"
+          pre-commit autoupdate -c ${{ matrix.config-path }}
 
       - name: create pull-request
         uses: peter-evans/create-pull-request@v5
