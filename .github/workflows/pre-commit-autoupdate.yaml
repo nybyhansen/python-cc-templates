@@ -41,6 +41,10 @@ jobs:
         with:
           commit-message: update pre-commit hooks
           title: "Updates to pre-commit hooks | ${{ steps.name.outputs.branch-suffix }}"
+          body: |
+            Version updates to one or more pre-commit hooks.
+
+            This PR is auto-generated.
           branch: pre-commit-autoupdates-${{ steps.name.outputs.branch-suffix }}
           delete-branch: true
           reviewers: nybyhansen
