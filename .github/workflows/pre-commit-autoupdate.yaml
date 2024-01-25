@@ -8,6 +8,7 @@ jobs:
         config-path:
           [
             "vanilla-template/{{ cookiecutter.repo_name }}/.pre-commit-config.yaml",
+            ".pre-commit-config.yaml",
           ]
 
     runs-on: ubuntu-latest
