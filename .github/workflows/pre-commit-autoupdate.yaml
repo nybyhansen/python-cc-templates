@@ -29,7 +29,7 @@ jobs:
           else
             NAME="template"
           fi
-          echo "branch-suffix=$NAME" >> "$GITHUB_OUTPUT"
+          echo "branch-suffix=$NAME" >> "$GITHUB_ENV"
 
       - name: update pre-commit hooks
         run: |
@@ -40,8 +40,8 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: update pre-commit hooks
-          title: "Updates to pre-commit hooks | ${{ steps.name.outputs.branch-suffix }}"
-          branch: pre-commit-autoupdates-${{ steps.name.outputs.branch-suffix }}
+          title: "Updates to pre-commit hooks | $branch-suffix"
+          branch: pre-commit-autoupdates-$branch-suffix
           delete-branch: true
           reviewers: nybyhansen
           labels: dependencies
