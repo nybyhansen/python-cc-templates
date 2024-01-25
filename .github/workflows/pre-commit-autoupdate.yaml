@@ -1,8 +1,11 @@
-name: Update precommit
-on: [workflow_dispatch]
+name: Update pre-commit hooks
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
 
 jobs:
-  autoUpdate:
+  updatePrecommit:
     strategy:
       matrix:
         config-path:
@@ -37,7 +40,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: update pre-commit hooks
-          title: "New versions to pre-commit hooks"
+          title: "Updates to pre-commit hooks | ${{ steps.name.outputs.branch-suffix }}"
           branch: pre-commit-autoupdates-${{ steps.name.outputs.branch-suffix }}
           delete-branch: true
           reviewers: nybyhansen
