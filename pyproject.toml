@@ -10,7 +10,7 @@ python = "^3.10"
 cookiecutter = "^2.4.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
+pytest = "^8.3.3"
 pre-commit = "^3.7.1"
 
 [build-system]
